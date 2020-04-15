@@ -4,10 +4,11 @@
 
 ### 运行步骤
 
-1. `myjson` 文件夹 执行 `npm i -S or cnpm i `
+1. `myjson` 文件夹 执行 `npm i -S or cnpm i `
 2. 启动 `npm run serve`
 3. `myjson_koa` 文件夹 执行 `npm i`
-4. 启动 `npm run start`
+4. 启动 `npm run start` **要有`nodemon`才可以**
+5. 如果没有就  `npm i nodemon`
 
 ### 简单介绍功能
 
