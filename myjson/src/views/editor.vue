@@ -16,7 +16,7 @@ export default {
   methods: {
     async sendJSON() {
       try {
-        let { data } = await this.$axios.post("api/writejson", {
+        let { data } = await this.$axios.post("/api/writejson", {
           data: this.$store.state.json
         });
         this.$store.state.url = data.url;

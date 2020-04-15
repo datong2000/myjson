@@ -28,7 +28,7 @@ export default {
   },
   computed: {
     address() {
-      return `http://dt2000.cn/api/${this.$store.state.url}`;
+      return `http://localhost:3000/api/${this.$store.state.url}`;
     }
   }
 };

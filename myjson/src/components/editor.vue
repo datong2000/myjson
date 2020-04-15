@@ -51,7 +51,7 @@ export default {
     },
     async getJson() {
       try {
-        let { data } = await this.$axios.post("api/readjson", {
+        let { data } = await this.$axios.post("/api/readjson", {
           url: this.$store.state.url
         });
         if (data.data) {
