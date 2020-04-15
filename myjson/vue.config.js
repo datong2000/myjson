@@ -11,7 +11,7 @@ module.exports = {
         proxy: {
             '': {
                 target: 'http://localhost:3000',
-                changeOrigin: true // 允许websockets跨域
+                changeOrigin: true // 允许跨域
             }
         }
     }
