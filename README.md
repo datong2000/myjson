@@ -8,11 +8,9 @@
 2. 启动 `npm run serve`
 3. `myjson_koa` 文件夹 执行 `npm i`
 4. 启动 `npm run start` **要有`nodemon`才可以**
-5. 如果没有就  `npm i nodemon`
+5. 如果没有就  `npm i nodemon`
 
 ### 简单介绍功能
-
-#####  吐槽：界面挺丑的，没怎么修改
 
 1. 可以在前端输入你想存储的数据，最好是 `JSON` 对象 
 2. **注意！！！前端这里我没有进行数据的验证**

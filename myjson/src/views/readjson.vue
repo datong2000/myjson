@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header></Header>
     <editor :disabled="true" :getData="getData"></editor>
     <div class="input_address">
       URL:
@@ -9,6 +10,7 @@
 </template>
 
 <script>
+import Header from "@/components/header";
 import editor from "@/components/editor";
 export default {
   data() {
@@ -17,18 +19,19 @@ export default {
     };
   },
   created() {
-    if (this.$store.state.url === "") {
-      this.$router.push("/");
-    } else {
+    if (localStorage.getItem("url")) {
       this.getData = true;
+    } else {
+      this.$router.push("/");
     }
   },
   components: {
-    editor
+    editor,
+    Header
   },
   computed: {
     address() {
-      return `http://localhost:3000/api/${this.$store.state.url}`;
+      return `${window.location.host}/api/${localStorage.getItem("url")}`;
     }
   }
 };
@@ -37,11 +40,10 @@ export default {
 <style lang="scss" scoped>
 .input_address {
   width: 50%;
-  margin: 0 auto;
-  margin-top: 30px;
+  margin: 15px auto 0;
+  font-size: 14px;
   .address {
     padding: 5px 20px;
-    width: 230px;
     outline: none;
     border-radius: 5px;
   }

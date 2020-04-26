@@ -52,7 +52,7 @@ export default {
     async getJson() {
       try {
         let { data } = await this.$axios.post("/api/readjson", {
-          url: this.$store.state.url
+          url: localStorage.getItem("url")
         });
         if (data.data) {
           this.json = data.data;
@@ -95,6 +95,13 @@ export default {
       height: 630px;
       outline: none;
       font: 400 16px 微软雅黑;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .editor {
+    .box {
+      width: 90%;
     }
   }
 }

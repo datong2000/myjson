@@ -1,15 +1,16 @@
 const router = require('koa-router')()
 const fs = require('fs')
-var files = { // 目录下的所有文件
-  name: [],
-  time: []
-}
+
 
 //查看文件存在天数
-router.get('/api/checkFiles', async (ctx) => {
+router.get('/api/checkfiles', async (ctx) => {
+  var files = [] // 目录下的所有文件
   //  循环json文件夹下的所有文件
   fs.readdirSync('json').map((file) => {
-
+    let list = { // 每个文件的名字和创建时间
+      name: {},
+      time: {}
+    }
     // 获取文件创建时间戳
     const {
       ctimeMs
@@ -24,8 +25,9 @@ router.get('/api/checkFiles', async (ctx) => {
       })
     } else {
       // 添加到对象里
-      files.name.push(file)
-      files.time.push(time)
+      list.name = file
+      list.time = time
+      files.push(list)
     }
   });
   ctx.body = {

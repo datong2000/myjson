@@ -5,12 +5,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        json: '',
-        url: ''
-    },
-    mutations: {
-        change: function () {
-            alert(this.state.json)
-        }
+        json: ''
     }
 })

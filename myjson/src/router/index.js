@@ -8,11 +8,18 @@ const routes = [{
         return import('@/views/editor')
     }
 }, {
-    name: 'readjson',
     path: '/readjson',
     component: () => {
         return import('@/views/readjson')
     }
+}, {
+    path: '/checkfiles',
+    component: () => {
+        return import('@/views/checkfiles')
+    }
+}, {
+    path: '*',
+    redirect: '/'
 }]
 export default new Router({
     routes

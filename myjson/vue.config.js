@@ -1,5 +1,4 @@
 module.exports = {
-    // publicPath: process.env.NODE_ENV === 'production' ? '/production-sub-path/' : '/',
     devServer: {
         host: '0.0.0.0', // 允许外部ip访问
         port: 8080, // 端口
