@@ -1,6 +1,6 @@
 # 一个可以临时存储json数据的页面
 
-演示网址 http://dt2000.cn
+演示网址 http://myjson.club
 
 ### 运行步骤
 
