@@ -1,9 +1,9 @@
 <template>
   <div class="header">
-    <div class="b">
+    <div class="title">
       <b>{ } myjson</b>
     </div>
-    <div class="title">
+    <div class="nav">
       <div>
         <router-link target="_blank" to="/">新建JSON</router-link>
       </div>
@@ -14,35 +14,39 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style lang="scss" scoped>
 .header {
   width: 50%;
   margin: 15px auto 5px;
-  .b {
+  .title {
     font-size: 70px;
-    font-weight: bolder;
     color: #b2b2b2;
     margin-bottom: 15px;
+    white-space: nowrap;
   }
-  .title {
-    display: flex;
-    justify-content: space-between;
-    a {
-      color: rgb(40, 101, 199);
+  .nav {
+    div {
+      font-size: 15px;
+      color: #3a3a3a;
+      font-weight: 600;
+      margin-left: 1rem;
+      display: inline;
+      ::v-deep a {
+        color: #3a3a3a;
+        text-decoration: none;
+      }
     }
-    ::v-deep a {
-      text-decoration: none;
+    div:first-child {
+      margin-left: 0;
     }
   }
 }
 @media screen and (max-width: 800px) {
   .header {
     width: 90%;
-    margin: 30px auto 10px;
+    b {
+      font-size: 3rem;
+    }
   }
 }
 </style>

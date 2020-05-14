@@ -5,9 +5,9 @@
 </template>
 
 <style lang="scss">
-@import "@/style/theme";
 body {
-  background: $background;
+  background: #F6F6F6;
   padding-bottom: 50px;
+  margin: 0;
 }
 </style>

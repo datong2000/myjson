@@ -9,7 +9,7 @@
     </div>
     <div class="item" v-for="(item,idx) in list" :key="idx">
       <div>{{item.name}}</div>
-      <div>{{item.time}}</div>
+      <div>{{item.time}}天</div>
     </div>
   </div>
 </template>

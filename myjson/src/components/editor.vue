@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="editor" @mouseup="resize">
+    <div class="editor" @mousemove="debounce(resize,10)" @touchmove="debounce(resize,10)">
       <div class="box">
         <ol ref="ol">
           <li ref="li"></li>
@@ -26,7 +26,8 @@ export default {
   data() {
     return {
       number: 0,
-      json: ""
+      json: "",
+      timeout: null
     };
   },
   mounted() {
@@ -34,6 +35,10 @@ export default {
     this.getData ? this.getJson() : "";
   },
   methods: {
+    debounce(fn, wait) {
+      if (this.timeout !== null) clearTimeout(this.timeout);
+      this.timeout = setTimeout(fn, wait);
+    },
     rowNumber() {
       this.number = Math.ceil(
         this.$refs.textarea.scrollHeight / this.$refs.li.scrollHeight
@@ -69,9 +74,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/style/theme";
 .editor {
   .box {
+    box-sizing: border-box;
     border: 2px solid #ccc;
     padding: 2px;
     border-radius: 5px;
@@ -84,7 +89,7 @@ export default {
       font: 400 16px 微软雅黑;
     }
     textarea {
-      background-color: $background;
+      background-color: #f6f6f6;
       flex: 1;
       line-height: 18px;
       padding: 0 0 0 5px;
@@ -101,7 +106,8 @@ export default {
 @media screen and (max-width: 800px) {
   .editor {
     .box {
-      width: 90%;
+      width: 100%;
+      margin: 0;
     }
   }
 }
